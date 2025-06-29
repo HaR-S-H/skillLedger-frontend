@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Mea+Culpa&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+CA+Guides&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.italianno-regular {
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@layer base {
+  :root {
+    --background: 240 25% 98%;
+    --foreground: 240 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+
+    --primary: 267 91% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 10% 95%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 5% 95%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 267 91% 70%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 10% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 267 91% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 5% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 5% 18%;
+    --muted-foreground: 240 5% 70%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5% 26%;
+    --input: 240 5% 26%;
+    --ring: 267 91% 70%;
+
+    --sidebar-background: 240 10% 12%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 267 91% 70%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+  
+  .glass-card {
+    @apply bg-white/70 dark:bg-card/80 backdrop-blur-md rounded-2xl border border-white/20 dark:border-white/10 shadow-xl;
+  }
+  
+  .credential-card {
+    @apply relative overflow-hidden rounded-xl bg-gradient-to-br from-credverse-light-purple to-credverse-soft-teal border border-white/30 shadow-lg;
+  }
+  
+  .credential-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-credverse-purple/20 to-credverse-teal/20 opacity-50;
+  }
+  
+  .hero-blob {
+    @apply absolute opacity-70 blur-3xl rounded-full;
+    animation: float 25s infinite alternate ease-in-out;
+  }
+  
+  @keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(3%, 3%) rotate(5deg); }
+    66% { transform: translate(-3%, 5%) rotate(-5deg); }
+    100% { transform: translate(3%, -3%) rotate(0deg); }
+  }
+}
